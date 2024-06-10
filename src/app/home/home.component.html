@@ -1,0 +1,9 @@
+<p>home works!</p>
+<div>
+    <h1>All Problems</h1>
+    <ul>
+      <li *ngFor="let problem of problems">
+        <a [routerLink]="['/problem', problem.id]">{{ problem.title }}</a>
+      </li>
+    </ul>
+  </div>

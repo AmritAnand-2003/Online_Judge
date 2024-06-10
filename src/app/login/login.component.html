@@ -1,0 +1,30 @@
+<p>login works!</p>
+<div>
+    <h1>Registraion</h1>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field>
+                <mat-label for="username">User Name</mat-label>
+                <input name="username" matInput [(ngModel)]="username" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Enter your password</mat-label>
+                <input matInput name="password" [type]="hide ? 'password' : 'text'" [(ngModel)]="password" required="">
+                
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                <!-- </button>  -->
+            </mat-form-field>
+        </div>
+        <p>New User? <a href="/register/">Login</a></p>
+        <button 
+        mat-raised-button color="primary" 
+        routerLinkActive="active" 
+        ariaCurrentWhenActive="page"
+        type="submit"
+        [disabled]="!loginForm.form.valid">
+            Register
+        </button>
+    </form>
+</div>
